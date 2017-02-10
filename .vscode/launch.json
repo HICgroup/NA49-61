@@ -1,11 +1,12 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/NA49calculator_C.so",
+            "program": "${workspaceRoot}/NA49calculator",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
