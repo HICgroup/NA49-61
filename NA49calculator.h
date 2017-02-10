@@ -126,31 +126,31 @@ public :
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
    //=======================================================================================//
-   virtual void     GetQvTPC(Int_t harm, Int_t sign, Int_t mode, Double_t &Qx, Double_t &Qy);
-   virtual void     GetQvFCal(Int_t harm, Int_t mode, Double_t &Qx, Double_t &Qy);
-   virtual void     GetQvector(Qvector &Q);
-   virtual void     OpenOutputFile(TString outFileName);
-   virtual void     OpenHistFile(TString outHistFileName);
-   virtual void     MakeOutputTree(TString tree_name, Qvector &Q);
-   virtual void     SaveOutputTree();
-   virtual void     FillOutputTree();
+   virtual void           GetQvTPC(Int_t harm, Int_t sign, Int_t mode, Double_t &Qx, Double_t &Qy);
+   virtual void           GetQvFCal(Int_t harm, Int_t mode, Double_t &Qx, Double_t &Qy);
+   virtual void           GetQvector(Qvector &Q);
+   virtual void           OpenOutputFile(TString outFileName);
+   virtual void           OpenHistFile(TString outHistFileName);
+   virtual void           MakeOutputTree(TString tree_name, Qvector &Q);
+   virtual void           SaveOutputTree();
+   virtual void           FillOutputTree();
    virtual Double_t GetTotalMomenta(Int_t mode);
    virtual Double_t GetTotalEnergy(Int_t mode);
-   virtual Int_t    GetNRing(Int_t module);
-   virtual Int_t    GetRingSector(Int_t module);
+   virtual Int_t          GetNRing(Int_t module);
+   virtual Int_t          GetRingSector(Int_t module);
    virtual Double_t GetRingAngle(Int_t module);
-   virtual void     SaveHistFile();
-   virtual void     InitHist();
-   virtual void     FillHist(Qvector &Q);
-   virtual Bool_t   EventCuts();
-   virtual Bool_t   TrackCuts();
+   virtual void           SaveHistFile();
+   virtual void           InitHist();
+   virtual void           FillHist(Qvector &Q);
+   virtual Bool_t      EventCuts();
+   virtual Bool_t      TrackCuts();
    //=======================================================================================//
 };
 
 #endif
 
 #ifdef NA49calculator_cxx
-NA49calculator::NA49calculator(TTree *tree) : fChain(0) 
+NA49calculator::NA49calculator(TTree *tree) : fChain(0)
 {
    if (tree == 0) {
       TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("t49run3133.0tree.root");
@@ -162,7 +162,7 @@ NA49calculator::NA49calculator(TTree *tree) : fChain(0)
    Init(tree);
 }
 
-NA49calculator::NA49calculator(TString inFileName) : fChain(0) 
+NA49calculator::NA49calculator(TString inFileName) : fChain(0)
 {
    TTree* tree;
    TChain * chain = new TChain("data","");
@@ -172,7 +172,7 @@ NA49calculator::NA49calculator(TString inFileName) : fChain(0)
    Init(tree);
 }
 
-NA49calculator::NA49calculator(TChain* chain) : fChain(0) 
+NA49calculator::NA49calculator(TChain* chain) : fChain(0)
 {
    TTree* tree;
    tree = chain;

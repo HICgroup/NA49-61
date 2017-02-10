@@ -38,14 +38,6 @@ void NA49calculator::MakeOutputTree(TString tree_name, Qvector &Q)
    outTree-> Branch("Q2xCal1",&Q.Cal1X2,"Q.Cal1X2/D");
    outTree-> Branch("Q2yCal1",&Q.Cal1Y2,"Q.Cal1Y2/D");
    outTree-> Branch("AdcRing",&Q.TotalAdc,"Q.TotalAdc/D");
-   /*
-   outTree-> Branch("fNEvent", &fNEvent,"fNEvent/I");
-   outTree-> Branch("fNPrimaryParticles", &fNPrimaryParticles,"fNPrimaryParticles/I");
-   outTree-> Branch("fPrimaryParticles_fEta", fPrimaryParticles_fEta,"fPrimaryParticles_fEta[fNPrimaryParticles]/F");
-   outTree-> Branch("fPrimaryParticles_fPhi", fPrimaryParticles_fPhi,"fPrimaryParticles_fPhi[fNPrimaryParticles]/F");
-   outTree-> Branch("fPrimaryParticles_fPt", fPrimaryParticles_fPt,"fPrimaryParticles_fPt[fNPrimaryParticles]/F");
-   outTree-> Branch("fRing_fADChadron", fRing_fADChadron,"fRing_fADChadron[240]/F");
-   */
 }
 
 Double_t NA49calculator::GetTotalMomenta(Int_t mode)
@@ -119,7 +111,7 @@ void NA49calculator::GetQvFCal(Int_t harm, Int_t mode, Double_t &Qx, Double_t &Q
 	Qx=0;
 	Qy=0;
 	Double_t Phi;
-	
+
 	for (Int_t jmodules=0; jmodules<_N_MODULES; jmodules++){
 		if (mode == 0) weight = 1.;
 		if (mode == 1) weight = fRing_fADChadron[jmodules];
