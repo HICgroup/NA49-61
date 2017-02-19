@@ -2,42 +2,42 @@
 
 void NA49calculator::OpenOutputFile(TString outFileName)
 {
-   outFile = new TFile(outFileName.Data(),"recreate");
-   outFile->cd();
+   foutFile = new TFile(outFileName.Data(),"recreate");
+   foutFile->cd();
 }
 
 void NA49calculator::SaveOutputTree()
 {
-	if (!(outFile->cd())) outFile->cd();
-   	outTree ->Write();
+	if (!(foutFile->cd())) foutFile->cd();
+   	foutTree ->Write();
 }
 
 void NA49calculator::FillOutputTree()
 {
-   outTree ->Fill();
+   foutTree ->Fill();
 }
 
 void NA49calculator::MakeOutputTree(TString tree_name, Qvector &Q)
 {
-   outTree = new TTree(tree_name.Data(),tree_name.Data());
+   foutTree = new TTree(tree_name.Data(),tree_name.Data());
 
-   outTree-> Branch("Q1xTPC0",&Q.Tpc0X1,"Q.Tpc0X1/D");
-   outTree-> Branch("Q1yTPC0",&Q.Tpc0Y1,"Q.Tpc0Y1/D");
-   outTree-> Branch("Q2xTPC0",&Q.Tpc0X2,"Q.Tpc0X2/D");
-   outTree-> Branch("Q2yTPC0",&Q.Tpc0Y2,"Q.Tpc0Y2/D");
-   outTree-> Branch("Q1xCal0",&Q.Cal0X1,"Q.Cal0X1/D");
-   outTree-> Branch("Q1yCal0",&Q.Cal0Y1,"Q.Cal0Y1/D");
-   outTree-> Branch("Q2xCal0",&Q.Cal0X2,"Q.Cal0X2/D");
-   outTree-> Branch("Q2yCal0",&Q.Cal0Y2,"Q.Cal0Y2/D");
-   outTree-> Branch("Q1xTPC1",&Q.Tpc1X1,"Q.Tpc1X1/D");
-   outTree-> Branch("Q1yTPC1",&Q.Tpc1Y1,"Q.Tpc1Y1/D");
-   outTree-> Branch("Q2xTPC1",&Q.Tpc1X2,"Q.Tpc1X2/D");
-   outTree-> Branch("Q2yTPC1",&Q.Tpc1Y2,"Q.Tpc1Y2/D");
-   outTree-> Branch("Q1xCal1",&Q.Cal1X1,"Q.Cal1X1/D");
-   outTree-> Branch("Q1yCal1",&Q.Cal1Y1,"Q.Cal1Y1/D");
-   outTree-> Branch("Q2xCal1",&Q.Cal1X2,"Q.Cal1X2/D");
-   outTree-> Branch("Q2yCal1",&Q.Cal1Y2,"Q.Cal1Y2/D");
-   outTree-> Branch("AdcRing",&Q.TotalAdc,"Q.TotalAdc/D");
+   foutTree-> Branch("Q1xTPC0",&Q.Tpc0X1,"Q.Tpc0X1/D");
+   foutTree-> Branch("Q1yTPC0",&Q.Tpc0Y1,"Q.Tpc0Y1/D");
+   foutTree-> Branch("Q2xTPC0",&Q.Tpc0X2,"Q.Tpc0X2/D");
+   foutTree-> Branch("Q2yTPC0",&Q.Tpc0Y2,"Q.Tpc0Y2/D");
+   foutTree-> Branch("Q1xCal0",&Q.Cal0X1,"Q.Cal0X1/D");
+   foutTree-> Branch("Q1yCal0",&Q.Cal0Y1,"Q.Cal0Y1/D");
+   foutTree-> Branch("Q2xCal0",&Q.Cal0X2,"Q.Cal0X2/D");
+   foutTree-> Branch("Q2yCal0",&Q.Cal0Y2,"Q.Cal0Y2/D");
+   foutTree-> Branch("Q1xTPC1",&Q.Tpc1X1,"Q.Tpc1X1/D");
+   foutTree-> Branch("Q1yTPC1",&Q.Tpc1Y1,"Q.Tpc1Y1/D");
+   foutTree-> Branch("Q2xTPC1",&Q.Tpc1X2,"Q.Tpc1X2/D");
+   foutTree-> Branch("Q2yTPC1",&Q.Tpc1Y2,"Q.Tpc1Y2/D");
+   foutTree-> Branch("Q1xCal1",&Q.Cal1X1,"Q.Cal1X1/D");
+   foutTree-> Branch("Q1yCal1",&Q.Cal1Y1,"Q.Cal1Y1/D");
+   foutTree-> Branch("Q2xCal1",&Q.Cal1X2,"Q.Cal1X2/D");
+   foutTree-> Branch("Q2yCal1",&Q.Cal1Y2,"Q.Cal1Y2/D");
+   foutTree-> Branch("AdcRing",&Q.TotalAdc,"Q.TotalAdc/D");
 }
 
 Double_t NA49calculator::GetTotalMomenta(Int_t mode)
@@ -140,13 +140,13 @@ void NA49calculator::GetQvector(Qvector &Q)
 
 void NA49calculator::OpenHistFile(TString outHistFileName)
 {
-	outHistFile = new TFile(outHistFileName.Data(),"recreate");
-	outHistFile->cd();
+	foutHistFile = new TFile(outHistFileName.Data(),"recreate");
+	foutHistFile->cd();
 }
 
 void NA49calculator::SaveHistFile()
 {
-	if (!(outHistFile->cd())) outHistFile->cd();
+	if (!(foutHistFile->cd())) foutHistFile->cd();
 	for (Int_t i_type=0;i_type<2;i_type++){
 		for (Int_t i_harm=0; i_harm<2; i_harm++){
 			for (Int_t i_mode=0; i_mode<2; i_mode++){
