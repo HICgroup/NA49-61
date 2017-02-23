@@ -275,6 +275,6 @@ Int_t NA49calculator::Cut(Long64_t entry)
    return 1;
 }
 
-#include <NA49analysis.h>
+#include "NA49analysis.h"
 
 #endif // #ifdef NA49calculator_cxx
