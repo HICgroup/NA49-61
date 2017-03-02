@@ -1,15 +1,15 @@
 #ifndef NA49calculator_h
 #define NA49calculator_h
 
-#include "variables.h"
+#include <variables.h>
 
 class NA49calculator {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
-   TFile          *foutFile;
-   TTree          *foutTree;
-   TFile          *foutHistFile;
+   TFile          *outFile;
+   TTree          *outTree;
+   TFile          *outHistFile;
 
    // Declaration of leaf types
    Float_t         fVertex_fPchi2;
@@ -275,6 +275,6 @@ Int_t NA49calculator::Cut(Long64_t entry)
    return 1;
 }
 
-#include "NA49analysis.h"
+#include <NA49analysis.h>
 
 #endif // #ifdef NA49calculator_cxx

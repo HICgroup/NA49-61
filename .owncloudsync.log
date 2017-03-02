@@ -1,0 +1,9 @@
+# timestamp | duration | file | instruction | dir | modtime | etag | size | fileId | status | errorString | http result code | other size | other modtime | other etag | other fileId | other instruction
+#=#=#=# Syncrun started  until  (0 msec)
+15:34:01|1467|NA49calculator_C_ACLiC_dict_rdict.pcm|INST_NEW|Up|1487936593||4192||4||201|0|0|||INST_NONE|
+15:34:00|972|README.md|INST_NEW|Up|1486744514||33||4||201|0|0|||INST_NONE|
+15:33:59|54|compile.sh|INST_NEW|Down|1487931465|89500166775635968:f7f61f69|97|89500166775635968|4||0|0|0|||INST_NONE|
+15:34:00|219|correlation_hist.root|INST_NEW|Down|1486800721|89500170265296896:6674c1b9|531736|89500170265296896|4||0|0|0|||INST_NONE|
+15:34:00|180|q_vectors.root|INST_NEW|Down|1486800721|89500173486522368:48180260|688376|89500173486522368|4||0|0|0|||INST_NONE|
+#=#=#=# Syncrun started  until  (0 msec)
+#=#=#=# Syncrun started  until  (0 msec)
